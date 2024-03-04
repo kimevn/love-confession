@@ -1,73 +1,41 @@
-var progress = document.querySelector(".progress");
-var percent = document.querySelector(".percent");
-var textBox = document.querySelector(".textBox");
-var button = document.querySelector(".button");
-var textBtn = document.querySelector(".textBtn");
-var heartBox = document.querySelector(".heartBox");
-var cursor = document.querySelector(".buttonCLick img"); 
-var heartItem1 = document.querySelector(".heartItem.item1")
-var heartItem2 = document.querySelector(".heartItem.item2")
-var heartItem3 = document.querySelector(".heartItem.item3")
-var count = 0;
-var percentWidth = 0;
-var heartLeft = -3.2;
-var progressLoad = setInterval(progressInterva,100)
+const englishButton = document.getElementById("englishButton");
+const japaneseButton = document.getElementById("japaneseButton");
+const chineseButton = document.getElementById("chineseButton");
+const koreanButton = document.getElementById("koreanButton");
+const frenchButton = document.getElementById("frenchButton");
+const germanButton = document.getElementById("germanButton");
+const vietnameseButton = document.getElementById("vietnameseButton");
 
-button.addEventListener("click", function(){
-    button.style.transform = "scale(0.8)";
-    setTimeout(()=>{
-        button.style.transform = "scale(1)";
-        window.location.href = "./love/love.html"
-    },200)
-})
+    englishButton.addEventListener("click", function() {
+      japaneseButton.style.display = "block";
+      japaneseButton.style.top = `${Math.random() * 90 + 5}%`;
+      japaneseButton.style.left = `${Math.random() * 90 + 5}%`;
+    });
 
-function progressInterva(){
-    if(count == 100 && percentWidth == 100){
-        clearInterval(progressLoad)
-        percent.textContent = "Nabatigold";
-        percent.style.letterSpacing = "1px";
-        textBox.style.transform = "scale(1.3)"
-        heartItem3.style.animation = "1s heartScale forwards"
-        setTimeout(()=>{
-            textBox.style.transform = "scale(0)"
-        },400)
-        setTimeout(()=>{
-            textBox.style.opacity = "0"
-        },600)
-        setTimeout(()=>{
-            button.style.transform= "scale(1)";
-        },800);
-        setTimeout(()=>{
-            button.style.background = "rgb(244,118,121)"
-            button.style.width = "130px";
-            button.style.borderRadius = "20px"
-        },1500)
-        setTimeout(()=>{
-            button.style.height = "40px";
-        },2000)
-        setTimeout(()=>{
-            textBtn.textContent = "Click me!"
-            textBtn.style.color = "#fff"
-        },2500)
-        setTimeout(()=>{
-            cursor.style.opacity = "1";
-        },3000)
-    }
-    else{
-        if(count == 10){
-            heartItem1.style.animation = "1s heartScale forwards"
-        }
-        if(count ==46){
-            percent.style.color= "#fff"
-        }
-        if(count == 60){
-            heartItem2.style.animation = "1s heartScale forwards"
-        }
-        count += 1;
-        percentWidth += 1;
-        heartLeft += 0.968;
-        progress.style.width = percentWidth + '%'
-        percent.innerText = count + '%'
-        heartBox.style.left = heartLeft + '%'
-    }
-}
+    japaneseButton.addEventListener("click", function() {
+      chineseButton.style.display = "block";
+      chineseButton.style.top = `${Math.random() * 90 + 5}%`;
+      chineseButton.style.left = `${Math.random() * 90 + 5}%`;
+    });
+
+    chineseButton.addEventListener("click", function() {
+        koreanButton.style.display = "block";
+        koreanButton.style.top = `${Math.random() * 90 + 5}%`;
+        koreanButton.style.left = `${Math.random() * 90 + 5}%`;
+    });
+
+    koreanButton.addEventListener("click", function() {
+        vietnameseButton.style.display = "block";
+        vietnameseButton.style.top = `${Math.random() * 90 + 5}%`;
+        vietnameseButton.style.left = `${Math.random() * 90 + 5}%`;
+    });
+
+    vietnameseButton.addEventListener("click", function(){
+        window.location.href = "/love/love.html"
+    })
+    
+const getButton = document.getElementById("getButton");
+
+    getButton.addEventListener("click", function(){
+        window.location.href = "/loading/index.html"
+    })
